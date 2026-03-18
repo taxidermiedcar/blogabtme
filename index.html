@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Creative Space</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Garamond', 'Times New Roman', serif;
+      background: #f5f1e8;
+      overflow-x: hidden;
+    }
+
+    .page { display: none; padding: 40px; }
+    .active { display: block; }
+
+    /* HOME */
+    .home { position: relative; height: 100vh; }
+
+    .item {
+      position: absolute;
+      width: 150px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .item:hover { transform: scale(1.1) rotate(2deg); }
+
+    .item1 { top: 20%; left: 10%; rotate:-24deg }
+    .item2 { width: 400px; height: 300px; top: 25%; left: 28%; }
+    .item3 { top: 25%; left: 70%; }
+    .item4 { top: 40%; left: 77%; rotate:30deg }
+
+    .back {
+      margin-bottom: 20px;
+      padding: 10px 15px;
+      background: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    h1 { font-size: 2.5rem; }
+
+    /* GALLERY */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .art-item { width: 200px; }
+
+    .art-item img { width: 100%; display: block; }
+
+    .caption {
+      background: #fff;
+      padding: 8px;
+      font-size: 14px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      min-height: 40px;
+    }
+
+    /* BLOG LAYOUT */
+    .blog-container {
+      display: flex;
+      gap: 20px;
+    }
+
+    .sidebar {
+      width: 250px;
+      background: #ddd;
+      padding: 15px;
+      height: 80vh;
+      overflow-y: auto;
+    }
+
+    .sidebar a {
+      display: block;
+      margin: 10px 0;
+      padding: 5px;
+      background: #bbb;
+      text-decoration: none;
+      color: black;
+    }
+
+    .sidebar a:hover { background: #999; }
+
+    .blog-content {
+      flex: 1;
+      background: white;
+      padding: 20px;
+      min-height: 80vh;
+    }
+
+    .post {
+      margin-bottom: 40px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- MUSIC -->
+<audio id="bg-music" autoplay loop>
+  <source src="https://downloads.khinsider.com/game-soundtracks/album/miitopia" type="audio/mpeg">
+</audio>
+
+<!-- HOME -->
+<div id="home" class="page active home">
+  <img src="https://i.pinimg.com/1200x/ef/96/4b/ef964b4cabffb252dcc11401c339e97f.jpg" class="item item1" onclick="openPage('profile')">
+  <img src="https://i.pinimg.com/736x/fd/a3/03/fda3033d72d0813f701d577070ad8a7e.jpg" class="item item2" onclick="openPage('art')">
+  <img src="https://png.pngtree.com/png-vector/20231229/ourmid/pngtree-crumpled-paper-ball-obsolete-png-image_11238224.png" class="item item3" onclick="openPage('blog')">
+  <img src="https://png.pngtree.com/png-vector/20231229/ourmid/pngtree-crumpled-paper-ball-obsolete-png-image_11238224.png" class="item item4" onclick="openPage('blog')">
+</div>
+
+<!-- PROFILE -->
+<div id="profile" class="page">
+  <button class="back" onclick="goHome()">Back</button>
+  <h1>My Profile</h1>
+  <p>Hello! My name is Enguun :D <br> This is my website .3.</p>
+  <p> Some info about me!! <br>1. I am a senior :O <br>2. I like drawing and anime!!<br>3. I have been noted to eat very sadly???</p>
+</div>
+
+<!-- ART -->
+<div id="art" class="page">
+  <button class="back" onclick="goHome()">Back</button>
+  <h1>My Artwork</h1>
+  <div class="gallery">
+
+    <div class="art-item">
+      <img src="https://i.pinimg.com/736x/d7/85/5c/d7855c498dd2f8958917043bbcf9604b.jpg">
+      <div class="caption" contenteditable="true">the time i made a pokemon</div>
+    </div>
+
+    <div class="art-item">
+      <img src="https://i.pinimg.com/736x/a4/9e/40/a49e40488c126e88679b6c955b0ee2f4.jpg">
+      <div class="caption" contenteditable="true">Wirtox's evolution!</div>
+    </div>
+
+    <div class="art-item">
+      <img src="https://i.pinimg.com/1200x/77/d0/3e/77d03e377fe898d1e92e65b2639c1d8c.jpg">
+      <div class="caption" contenteditable="true">I had fun drawing this one! Its my own made up fantasy monster!! how cool</div>
+    </div>
+
+    <div class="art-item">
+      <img src="https://i.pinimg.com/1200x/6c/b3/4e/6cb34ee8962e22ed80ef451454c3b1d1.jpg">
+      <div class="caption" contenteditable="true">A fanart of Kunikida! from bsd. It was for my friend lol</div>
+    </div>
+
+    <div class="art-item">
+      <img src="https://i.pinimg.com/1200x/b1/46/11/b146110d6886c439c96aa30503097116.jpg">
+      <div class="caption" contenteditable="true">wanted to draw some emo clothes..</div>
+    </div>
+
+    <div class="art-item">
+      <img src="https://i.pinimg.com/1200x/29/c1/69/29c16979a3526e39805f00c6f27d3481.jpg">
+      <div class="caption" contenteditable="true">A gyaruo oc i made!! he is very silly and fun to draw</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- BLOG (STATIC TEMPLATE) -->
+<div id="blog" class="page">
+  <button class="back" onclick="goHome()">Back</button>
+  <h1>My Blog</h1>
+
+  <div class="blog-container">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <h3>Entries</h3>
+      <!-- LINK THESE TO POSTS BELOW -->
+      <a href="#post1">My First Post</a>
+      <a href="#post2">Another Entry</a>
+    </div>
+
+    <!-- BLOG CONTENT -->
+    <div class="blog-content">
+
+      <!-- POST TEMPLATE -->
+      <div class="post" id="post1">
+        <h2>Website!!</h2>
+        <p>I made this website for school :D <br> i hope that one day i can get really good at making codes so i dont have to use chatgpt </p>
+      </div>
+
+      <div class="post" id="post2">
+        <h2>Music...</h2>
+        <p>Really wanna add music to this website!! but i dont know how... sighhh</p>
+      </div>
+
+      <!-- COPY THIS BLOCK TO ADD MORE POSTS -->
+      <!--
+      <div class="post" id="post3">
+        <h2>Title Here</h2>
+        <p>Your content here...</p>
+      </div>
+      -->
+
+    </div>
+  </div>
+</div>
+
+<script>
+  function openPage(pageId) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
+  }
+
+  function goHome() {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('home').classList.add('active');
+  }
+
+  document.addEventListener('click', () => {
+    const music = document.getElementById('bg-music');
+    music.play().catch(() => {});
+  });
+</script>
+
+</body>
+</html>
+
